@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            background-color: #fefefe5c;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        div{
+            text-align: center;
+        }
+
+        div h2 {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        div hr {
+            margin: 14px 0;
+        }
+
+        div input[type=number] {
+            margin: 8px 0;
+            padding: 8px ;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        div input[type=number]:read-only {
+            border: 1px solid #000;
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        div button {
+            margin: 0 4px;
+            padding: 6px 0;
+            width: 62px;
+            border: 1px solid #999;
+            background-color: #f7f7f7;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        div button:hover {
+            background-color: #ccc;
+        }
+
+        div button:focus {
+            outline: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Simple Caculator</h1>
+    <hr>
+    <input type="number" id="first" placeholder="First Number">
+    <br> 
+    <input type="number" id="second" placeholder="Second Number">
+    <br>
+    <button id="add">+</button>
+    <button id="sub">-</button>
+    <button id="mul">×</button>
+    <button id="div">÷</button>
+    <br>
+    <input type="number" readonly id="result">
+    </div>
+
+    <script>
+        let n1 = document.getElementById('first');
+        let n2 = document.getElementById('second');
+        let res = document.getElementById('result');
+        document.getElementById('add').addEventListener('click', function() {
+            res.value = parseInt(n1.value)+parseInt(n2.value);
+        });
+
+        document.getElementById('sub').addEventListener('click', function() {
+            res.value = parseInt(n1.value)-parseInt(n2.value);
+        });
+
+        document.getElementById('mul').addEventListener('click', function() {
+            res.value = parseInt(n1.value)*parseInt(n2.value);
+        });
+
+        document.getElementById('div').addEventListener('click', function() {
+            res.value = parseInt(n1.value)/parseInt(n2.value);
+        });
+    </script>
+</body>
+</html>
